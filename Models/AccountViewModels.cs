@@ -49,9 +49,9 @@ namespace CompanyJLSV7.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
+        [Display(Name = "Numero de Identificacion")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string IdPersona { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -65,9 +65,39 @@ namespace CompanyJLSV7.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(100, ErrorMessage = "El campo Nombre es obligatorio")]
+        [Display(Name = "Noombre")]
+        public string Nombre { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "El campo Apellido es obligatorio")]
+        [Display(Name = "Apellido")]
+        public string Apellido { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "El campo Tipo de Documento es obligatorio")]
+        [Display(Name = "Tipo de Documento")]
+        public string TipoDocumento { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "El campo Numero de Documento es obligatorio")]
+        [Display(Name = "Numero de Documento")]
+        public string IdPersona { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "El campo Telefono es obligatorio")]
+        [Display(Name = "Telefono")]
+        public string Telefono { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "El campo Rol es obligatorio")]
+        [Display(Name = "Rol")]
+        public string Rol { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
